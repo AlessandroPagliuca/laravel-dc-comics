@@ -35,7 +35,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $newComic = new Comic();
+        $newComic->title = $form_data['title'];
+        $newComic->description = $form_data['description'];
+        $newComic->thumb = $form_data['thumb'];
+        $newComic->price = $form_data['price'];
+        $newComic->series = $form_data['series'];
+        $newComic->sale_date = $form_data['sale_date'];
+        $newComic->type = $form_data['type'];
+        $newComic->fill($form_data);
+        $newComic->save();
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -45,7 +56,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -64,9 +75,10 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comic  $comic
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request)
     {
         //
+
     }
 
     /**
