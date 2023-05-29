@@ -12,7 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('resources/img/{filename}', function ($filename) {
+    $path = resource_path('img/' . $filename);
+    if (file_exists($path)) {
+        return response()->file($path);
+    }
+    abort(404);
+})->name('resource.img')->where('filename', '.*');
 Route::get('/', function () {
     return view('home');
 });
+
+Route::resource('comics', ComicController::class);
