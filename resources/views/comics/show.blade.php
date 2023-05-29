@@ -11,6 +11,9 @@
                     <h5 class="card-title"> {{ $comic->title }}</h5>
                 </div>
             </div>
+            <a href="{{ route('comics.index') }}" class="btn btn-primary text-uppercase fw-semibold text-center m-3">Go back
+            </a>
+
         </div>
     </section>
 @endsection
