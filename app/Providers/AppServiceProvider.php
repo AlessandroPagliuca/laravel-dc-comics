@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Config;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer(['partials.header', 'partials.footer'], function ($view) {
+            $footerLinks = Config::get('db.footerLinks');
+            $headerLinks = Config::get('db.headerLinks');
+
+            $view->with('footerLinks', $footerLinks)
+                ->with('headerLinks', $headerLinks);
+        });
     }
 }
