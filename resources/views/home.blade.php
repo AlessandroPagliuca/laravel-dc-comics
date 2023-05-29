@@ -3,8 +3,12 @@
 @section('content')
     <div class="bg-dark">
         <div class="container d-flex justify-content-center">
-            <a href="{{ route('comics.index') }}" class="btn btn-primary w-50 my-4 text-uppercase fw-semibold text-center"
-                style="height: 200px;">Choose comics</a>
+            <a href="{{ route('comics.index') }}"
+                class="btn btn-primary w-50 mx-2 my-4 text-uppercase fw-semibold text-center" style="height: 200px;">Choose
+                comics</a>
+            <a href="{{ route('comics.create') }}"
+                class="btn btn-primary w-50 mx-2 my-4 text-uppercase fw-semibold text-center" style="height: 200px;">Create
+                new comic</a>
 
         </div>
         <div class="w-100 d-flex justify-content-center py-3">

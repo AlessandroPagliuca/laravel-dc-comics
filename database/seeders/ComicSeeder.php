@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Comic;
+use App\Models\ComicArtist;
+use App\Models\ComicWriter;
 
 class ComicSeeder extends Seeder
 {
@@ -25,6 +27,18 @@ class ComicSeeder extends Seeder
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
+            foreach ($comics['artists'] as $index => $artist) {
+                $newArtist = new ComicArtist();
+                $newArtist->$index = $artist['artist'];
+                $newArtist->save();
+
+            }
+            foreach ($comics['writers'] as $index => $writer) {
+                $newWriter = new ComicWriter();
+                $newWriter->$index = $writer['writer'];
+                $newWriter->save();
+
+            }
             $newComic->save();
         }
     }
