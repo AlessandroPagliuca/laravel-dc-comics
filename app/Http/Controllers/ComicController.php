@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
@@ -25,14 +25,13 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
      */
     public function store(Request $request)
     {
@@ -43,7 +42,6 @@ class ComicController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     *
      */
     public function show(Comic $comic)
     {
@@ -54,7 +52,6 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     *
      */
     public function edit(Comic $comic)
     {
@@ -66,7 +63,6 @@ class ComicController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comic  $comic
-     *
      */
     public function update(Request $request, Comic $comic)
     {
@@ -77,7 +73,6 @@ class ComicController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Comic  $comic
-     *
      */
     public function destroy(Comic $comic)
     {

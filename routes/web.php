@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +19,9 @@ Route::get('resources/img/{filename}', function ($filename) {
     }
     abort(404);
 })->name('resource.img')->where('filename', '.*');
+
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::resource('comics', ComicController::class);
