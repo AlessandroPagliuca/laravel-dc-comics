@@ -9,7 +9,7 @@
                     <div class="card">
                         <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
                         <div class="card-body">
-                            <h5 class="card-title"> {{ $product->title }}</h5>
+                            <h5 class="card-title"> {{ $comic->title }}</h5>
                             <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Vedi specifiche</a>
                         </div>
                     </div>
