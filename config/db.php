@@ -265,7 +265,7 @@ return [
         ]
 
     ],
-    $data = [
+    $headerLinks = [
         'character',
         'comics',
         'movies',
