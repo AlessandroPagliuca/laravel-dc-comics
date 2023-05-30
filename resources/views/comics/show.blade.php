@@ -15,7 +15,7 @@
                 <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger ms-3">Delete</button>
+                    <button type="submit" class="delete-btn btn btn-danger ms-3">Delete</button>
                 </form>
             </div>
             <a href="{{ route('comics.index') }}" class="btn btn-primary text-uppercase fw-semibold text-center m-3">Go back
@@ -23,4 +23,5 @@
 
         </div>
     </section>
+    @include('partials.modal')
 @endsection
