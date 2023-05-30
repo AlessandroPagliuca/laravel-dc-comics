@@ -12,6 +12,11 @@
                 <a href="{{ route('comics.edit', $comic->id) }}"
                     class="btn btn-primary text-uppercase fw-semibold text-center m-3">Edit
                 </a>
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger ms-3">Delete</button>
+                </form>
             </div>
             <a href="{{ route('comics.index') }}" class="btn btn-primary text-uppercase fw-semibold text-center m-3">Go back
             </a>
