@@ -38,32 +38,32 @@ validForm.forEach((btn) => {
             const typeValue = document.getElementById("type").value.trim();
 
             if (titleValue === "") {
-                alert("Il campo title è obbligatorio!");
+                document.getElementById('titleComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
-
             if (textareaValue === "") {
-                alert("Il campo description è obbligatorio!");
+                document.getElementById('descriptionComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
             if (thumbValue === "") {
-                alert("Il campo thumb è obbligatorio!");
+                document.getElementById('thumbComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
             if (priceValue === "") {
-                alert("Il campo price è obbligatorio!");
+                document.getElementById('priceComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
             if (seriesValue === "") {
-                alert("Il campo series è obbligatorio!");
+                document.getElementById('seriesComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
             if (sale_dateValue === "") {
-                alert("Il campo thumb è obbligatorio!");
+                document.getElementById('sale_dateComic').classList.add('alert-none')
+
                 return false; // blocca l'invio del modulo
             }
             if (typeValue === "") {
-                alert("Il campo sale_date è obbligatorio!");
+                document.getElementById('typeComic').classList.add('alert-none')
                 return false; // blocca l'invio del modulo
             }
             return true; // permette l'invio del modulo
