@@ -213,6 +213,12 @@ return [
             ],
         ],
     ],
+    //prova conversione data da str in date
+
+    //$sale_date_str = 'comics'['sale_date'],
+    // $sale_date = DateTime::createFromFormat('Y-m-d', $sale_date_str),
+    // $sale_date_db = $sale_date->format('Y-m-d'),
+
     $footerLinks = [
         'dc_comics' => [
             'title' => 'dc comics',

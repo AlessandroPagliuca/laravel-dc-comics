@@ -40,6 +40,7 @@
                 <label for="sale_date" class="form-label"> Edit sale date</label>
                 <input type="date" class="form-control" name="sale_date" id="sale_date" aria-describedby="sale_dateComic"
                     value=" {{ $comic->sale_date }} ">
+                <!--prova conversione data da str in date {{-- $comic->sale_date_db --}}-->
                 <div id="sale_dateComic" class="form-text">Edit saledate</div>
             </div>
             <div class="mb-3">
