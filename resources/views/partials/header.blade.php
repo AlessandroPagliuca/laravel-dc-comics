@@ -1,3 +1,9 @@
+<?php
+
+$headerLinks = ['character', 'comics', 'movies', 'tv', 'games', 'collectibles', 'videos', 'fans', 'news', 'shop'];
+//dd($headerLinks);
+?>
+
 <header>
     <!-- dc power visa additional dc sites -->
     <div class="bg-primary box-visa">
