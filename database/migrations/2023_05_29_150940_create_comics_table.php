@@ -23,24 +23,6 @@ return new class extends Migration {
             $table->string('type');
             $table->timestamps();
         });
-
-        Schema::create('comic_artists', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('comic_id');
-            $table->string('artist');
-            $table->timestamps();
-
-            $table->foreign('comic_id')->references('id')->on('comics')->onDelete('cascade');
-        });
-
-        Schema::create('comic_writers', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('comic_id');
-            $table->string('writer');
-            $table->timestamps();
-
-            $table->foreign('comic_id')->references('id')->on('comics')->onDelete('cascade');
-        });
     }
 
     /**
@@ -51,7 +33,5 @@ return new class extends Migration {
     public function down()
     {
         Schema::dropIfExists('comics');
-        Schema::dropIfExists('comic_artists');
-        Schema::dropIfExists('comic_writers');
     }
 };
