@@ -59,7 +59,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -68,9 +68,11 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comic  $comic
      */
-    public function update(Request $request)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->update($form_data);
+        return redirect()->route('comics.show', $comic->id);
 
     }
 
