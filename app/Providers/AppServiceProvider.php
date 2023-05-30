@@ -26,12 +26,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['partials.header', 'partials.footer'], function ($view) {
-            $headerLinks = Config::get('db.headerLinks');
-
-            $footerLinks = Config::get('db.footerLinks');
-
+            $headerLinks = config("dbHeader.headerLinks");
+            $footerLinks = config("dbFooter.footerLinks");
             $view->with('headerLinks', $headerLinks)
                 ->with('footerLinks', $footerLinks);
+            dd($headerLinks, $footerLinks);
+
+
         });
+
     }
 }
