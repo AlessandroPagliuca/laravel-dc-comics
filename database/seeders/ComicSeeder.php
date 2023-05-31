@@ -5,8 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Comic;
-use App\Models\ComicArtist;
-use App\Models\ComicWriter;
+use Carbon\Carbon;
 
 class ComicSeeder extends Seeder
 {
@@ -25,7 +24,7 @@ class ComicSeeder extends Seeder
             $newComic->thumb = $comic['thumb'];
             $newComic->price = $comic['price'];
             $newComic->series = $comic['series'];
-            $newComic->sale_date = $comic['sale_date'];
+            $newComic->sale_date = Carbon::createFromFormat('d/m/Y', $comic['sale_date'])->format('Y-m-d');
             $newComic->type = $comic['type'];
             $newComic->save();
         }
